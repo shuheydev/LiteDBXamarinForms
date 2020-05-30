@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LiteDBXamarinForms.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Title}" />
+            <Entry Placeholder="first name" Text="{Binding FirstName}" />
+            <Entry Placeholder="last name" Text="{Binding LastName}" />
+            <Entry Placeholder="age" Text="{Binding Age}" />
+            <Button Command="{Binding AddCommand}" Text="Add" />
+            <ListView HasUnevenRows="True" ItemsSource="{Binding People}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout> 
+                                <Label Text="{Binding Id}" />
+                                <Label Text="{Binding FirstName}" />
+                                <Label Text="{Binding LastName}" />
+                                <Label Text="{Binding Age}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
